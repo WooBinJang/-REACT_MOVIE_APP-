@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>REACT</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+
+    function MinutesToHours() {
+      const [amount, setAmount] = React.useState(0); // Array [요소,함수] => 함수는 리렌더링 해줌
+
+      const [flipped, setFlipped] = React.useState(false);
+
+      const onchange = (event) => {
+        setAmount(event.target.value); // 자동 리렌더링
+      };
+      const reset = (event) => {
+        setAmount(0); // 자동 리렌더링
+      };
+      const onFlip = (current) => {
+        reset();
+        setFlipped((current) => !current);
+      };
+      return (
+        <div>
+          <div>
+            <label htmlFor="minutes">minutes</label>
+            <input
+              value={flipped ? amount * 60 : amount}
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onchange}
+              disabled={flipped}
+            ></input>
+          </div>
+          <h4>You want to convert {amount}</h4>
+          <div>
+            <label htmlFor="hours">hours</label>
+            <input
+              value={flipped ? amount : Math.round(amount / 60)}
+              id="hours"
+              placeholder="hours"
+              type="number"
+              disabled={!flipped}
+              onChange={onchange}
+            ></input>
+          </div>
+          <button onClick={reset}>reset</button>
+          <button onClick={onFlip}>filp</button>
+        </div>
+      );
+    }
+
+    function KmToMiles() {
+      const [length, setLength] = React.useState(0); // Array [요소,함수] => 함수는 리렌더링 해줌
+
+      const [flipped, setFlipped] = React.useState(false);
+
+      const onchange = (event) => {
+        setLength(event.target.value); // 자동 리렌더링
+      };
+      const reset = (event) => {
+        setLength(0); // 자동 리렌더링
+      };
+      const onFlip = (current) => {
+        reset();
+        setFlipped((current) => !current);
+      };
+      return (
+        <div>
+          <div>
+            <label htmlFor="KM">KM</label>
+            <input
+              value={flipped ? length * 1.609343502101154 : length}
+              id="KM"
+              placeholder="KM"
+              type="KM"
+              onChange={onchange}
+              disabled={flipped}
+            ></input>
+          </div>
+          <h4>You want to convert {length}</h4>
+          <div>
+            <label htmlFor="Mile">Mile</label>
+            <input
+              value={flipped ? length : length * 0.621371}
+              id="Mile"
+              placeholder="Mile"
+              type="number"
+              disabled={!flipped}
+              onChange={onchange}
+            ></input>
+          </div>
+          <button onClick={reset}>reset</button>
+          <button onClick={onFlip}>filp</button>
+        </div>
+      );
+    }
+
+    function App() {
+      const [index, setIndex] = React.useState("0");
+      const onSelect = (event) => {
+        console.log(event.target.value);
+        setIndex(event.target.value);
+      };
+      return (
+        <div>
+          <h1>Converter</h1>
+          <select value={index} onChange={onSelect}>
+            <option value="0">Minutes & Hours</option>
+            <option value="1">KM & Miles</option>
+          </select>
+          <hr />
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
