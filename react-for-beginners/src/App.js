@@ -18,7 +18,7 @@ function App() {
     console.log("카운터 시 랜더링");
   }, [counter]);
   useEffect(() => {
-    console.log("카운터 또는 키워드 입력 시 랜더링");
+    console.log("카운터 또는 키워드 입력 시 랜더링 ");
   }, [counter, keyword]);
   return (
     <div>
