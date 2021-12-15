@@ -1,26 +1,41 @@
-import { useEffect, useState } from "react";
-
-function Hello() {
-  useEffect(() => {
-    console.log("hi");
-    return () => console.log("bye");
-    // 컴포넌트가 파괴될 때도 함수를 실행하고 싶으면
-    // useEffect 함수가 새로운 함수를 return
-  }, []);
-  return <h1>Hello</h1>;
-}
-// dependency가 비어있으면 자동으로 컴포넌트가 파괴될 때 cleanup함수가 실행되는데
-// 그 과정이 리렌더링으로 useEffect함수가 실행되고 클린업하면서
-// 이전에 있던 이펙트인 console.log(“hi")가 삭제되고
-// 새로운 이펙트 함수인 return 함수가 실행
+import { useState } from "react";
 
 function App() {
-  const [showing, setShowing] = useState(false);
-  const onClick = () => setShowing((prev) => !prev);
+  const [toDo, setToDo] = useState(""); //state는 직접적으로 수정 불가능 함수를 가져와서 수정
+  const [toDos, setToDos] = useState([]);
+  const onChange = (event) => setToDo(event.target.value);
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (toDo === "") {
+      return;
+    }
+    setToDos((currentArray) => [...currentArray, toDo]);
+    setToDo("");
+  };
+  console.log(toDos);
   return (
     <div>
-      {showing ? <Hello /> : null}
-      <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
+      <h1>My To Dos : {toDos.length}</h1>
+      <form onSubmit={onSubmit}>
+        <input
+          onChange={onChange}
+          value={toDo}
+          type="text"
+          placeholder="Write your to do..."
+        ></input>
+        <button>Add To Do</button>
+      </form>
+      <hr />
+      <ul>
+        {
+          //map의 첫 번째 argument는 값이고 두번째는 index
+          toDos.map((toDo, index) => (
+            <li key={index}>{toDo}</li>
+          ))
+          //리액트는 기본적으로 list에 있는 모든 item을 인식하기 때문에 key를 넣어 고유하게 만들어줘야함
+        }
+      </ul>
     </div>
   );
 }
