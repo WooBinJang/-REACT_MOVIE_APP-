@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/github/io/-REACT_MOVIE_APP-/static/js/main.6b8a04df.chunk.js",
-    "main.js.map": "/github/io/-REACT_MOVIE_APP-/static/js/main.6b8a04df.chunk.js.map",
-    "runtime-main.js": "/github/io/-REACT_MOVIE_APP-/static/js/runtime-main.35b56621.js",
-    "runtime-main.js.map": "/github/io/-REACT_MOVIE_APP-/static/js/runtime-main.35b56621.js.map",
-    "static/js/2.7b86edda.chunk.js": "/github/io/-REACT_MOVIE_APP-/static/js/2.7b86edda.chunk.js",
-    "static/js/2.7b86edda.chunk.js.map": "/github/io/-REACT_MOVIE_APP-/static/js/2.7b86edda.chunk.js.map",
-    "index.html": "/github/io/-REACT_MOVIE_APP-/index.html",
-    "static/js/2.7b86edda.chunk.js.LICENSE.txt": "/github/io/-REACT_MOVIE_APP-/static/js/2.7b86edda.chunk.js.LICENSE.txt"
+    "main.js": "/-REACT_MOVIE_APP-/static/js/main.6b8a04df.chunk.js",
+    "main.js.map": "/-REACT_MOVIE_APP-/static/js/main.6b8a04df.chunk.js.map",
+    "runtime-main.js": "/-REACT_MOVIE_APP-/static/js/runtime-main.f3dc9990.js",
+    "runtime-main.js.map": "/-REACT_MOVIE_APP-/static/js/runtime-main.f3dc9990.js.map",
+    "static/js/2.7b86edda.chunk.js": "/-REACT_MOVIE_APP-/static/js/2.7b86edda.chunk.js",
+    "static/js/2.7b86edda.chunk.js.map": "/-REACT_MOVIE_APP-/static/js/2.7b86edda.chunk.js.map",
+    "index.html": "/-REACT_MOVIE_APP-/index.html",
+    "static/js/2.7b86edda.chunk.js.LICENSE.txt": "/-REACT_MOVIE_APP-/static/js/2.7b86edda.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.35b56621.js",
+    "static/js/runtime-main.f3dc9990.js",
     "static/js/2.7b86edda.chunk.js",
     "static/js/main.6b8a04df.chunk.js"
   ]
