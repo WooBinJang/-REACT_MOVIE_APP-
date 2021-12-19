@@ -4,17 +4,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .movie_img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 5rem;
 }
 
-.movie_info {
-  color: aqua;
-  text-align: center;
+.movie_img img {
+  display: block;
+  margin: 0 auto;
+}
+dl {
+  margin: 0 auto;
+}
+
+.movie_info_detail dt {
+  color: red;
+  display: inline;
+}
+.movie_info_detail dt::after {
+  content: " :";
+}
+.movie_info_detail dd {
+  color: rgb(58, 91, 163);
+  display: inline;
 }

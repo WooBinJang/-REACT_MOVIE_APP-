@@ -34,24 +34,34 @@ function Detail() {
         </div>
       ) : (
         <div>
-          <img
-            className={styles.movie_img}
-            src={movie.medium_cover_image}
-            alt={movie.title}
-          ></img>
-          <div
-            className={styles.movie_info}
-          >{`Title : ${movie.title_long} `}</div>
-          <div
-            className={styles.movie_info}
-          >{`Runtime : ${movie.runtime} min`}</div>
-          <div
-            className={styles.movie_info}
-          >{`language : ${movie.language}`}</div>
-          <div
-            className={styles.movie_info}
-          >{`Description : ${movie.description_full}`}</div>
-          <div className={styles.movie_info}>{`Rating : ${movie.rating}`}</div>
+          <div className={styles.movie_img}>
+            <img src={movie.medium_cover_image} alt={movie.title}></img>
+          </div>
+
+          <div className={styles.movie_info}>
+            <dl>
+              <div className={styles.movie_info_detail}>
+                <dt>Title</dt>
+                <dd>{movie.title_long}</dd>
+              </div>
+              <div className={styles.movie_info_detail}>
+                <dt>Runtime</dt>
+                <dd>{movie.title_long}</dd>
+              </div>
+              <div className={styles.movie_info_detail}>
+                <dt>language</dt>
+                <dd>{movie.language}</dd>
+              </div>
+              <div className={styles.movie_info_detail}>
+                <dt>Description</dt>
+                <dd>{movie.description_full}</dd>
+              </div>
+              <div className={styles.movie_info_detail}>
+                <dt>Rating</dt>
+                <dd>{movie.rating}</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       )}
     </Container>
