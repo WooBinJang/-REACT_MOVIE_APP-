@@ -23,17 +23,18 @@ function Detail() {
   const Container = styled.div`
     background-image: url(${movie.background_image_original});
     background-size: cover;
+
     height: 100vh;
   `;
-  console.log(movie);
+
   return (
-    <Container>
+    <div className={styles.wrapper}>
       {loading ? (
         <div className={styles.loader}>
           <span>Loading...</span>
         </div>
       ) : (
-        <div>
+        <div className={styles.Container}>
           <div className={styles.movie_img}>
             <img src={movie.medium_cover_image} alt={movie.title}></img>
           </div>
@@ -54,7 +55,9 @@ function Detail() {
               </div>
               <div className={styles.movie_info_detail}>
                 <dt>Description</dt>
-                <dd>{movie.description_full}</dd>
+                <dd className={styles.movie_info_detail_des}>
+                  {movie.description_full}
+                </dd>
               </div>
               <div className={styles.movie_info_detail}>
                 <dt>Rating</dt>
@@ -64,7 +67,7 @@ function Detail() {
           </div>
         </div>
       )}
-    </Container>
+    </div>
   );
 }
 
